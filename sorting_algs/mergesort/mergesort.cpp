@@ -52,13 +52,20 @@ int main(){
     fill_array_with_random_numbers();
     cout_first_M_elements();
 
+    bool sorted = check_if_array_is_sorted_parallel();
+    if(sorted){
+        std::cout << "The array is sorted." << std::endl;
+    } else {
+        std::cout << "The array is not sorted." << std::endl;
+    }
+
     double time = omp_get_wtime();
     mergesort(array, array_copyspace, 0, N);
     time = omp_get_wtime() - time;
 
     cout_first_M_elements();
 
-    bool sorted = check_if_array_is_sorted();
+    sorted = check_if_array_is_sorted_parallel();
     if(sorted){
         std::cout << "The array is sorted." << std::endl;
     } else {
