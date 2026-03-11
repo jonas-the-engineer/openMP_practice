@@ -2,7 +2,7 @@
 #include <omp.h>
 #include <random>
 
-#define N 1000
+#define N 10
 
 int array[N];
 int array_copyspace[N]; // half of that would be enough in theory, but less readable (my opinion)
